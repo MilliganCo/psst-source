@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = ["crates/core", "crates/server", "app/src-tauri"]
+
+[workspace.package]
+version = "0.8.0"
+edition = "2021"
+
+# Argon2 in debug builds is ~50x slower; tests derive keys a lot.
+[profile.dev.package.argon2]
+opt-level = 3
+
+[profile.dev.package.blake2]
+opt-level = 3

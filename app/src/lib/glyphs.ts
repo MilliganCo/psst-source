@@ -1,0 +1,84 @@
+// Chat symbols from Nerd Fonts. assets/nf-symbols.woff is a subset of Symbols Nerd Font Mono
+// with exactly these code points (pyftsubset --unicodes=...).
+export const GLYPHS: { ch: string; name: string }[] = [
+  { ch: '\u{f01f5}', name: 'улыбка' }, // md-emoticon_happy_outline
+  { ch: '\u{f01f2}', name: 'смайл' }, // md-emoticon_outline
+  { ch: '\u{f01f3}', name: 'круто' }, // md-emoticon_cool_outline
+  { ch: '\u{f0c79}', name: 'подмигивание' }, // md-emoticon_wink_outline
+  { ch: '\u{f1215}', name: 'смех' }, // md-emoticon_lol_outline
+  { ch: '\u{f069c}', name: 'восторг' }, // md-emoticon_excited_outline
+  { ch: '\u{f0c77}', name: 'язык' }, // md-emoticon_tongue_outline
+  { ch: '\u{f0c73}', name: 'поцелуй' }, // md-emoticon_kiss_outline
+  { ch: '\u{f01f6}', name: 'нейтрально' }, // md-emoticon_neutral_outline
+  { ch: '\u{f10df}', name: 'озадачен' }, // md-emoticon_confused_outline
+  { ch: '\u{f01f8}', name: 'грусть' }, // md-emoticon_sad_outline
+  { ch: '\u{f0c6d}', name: 'слёзы' }, // md-emoticon_cry_outline
+  { ch: '\u{f0c6a}', name: 'злость' }, // md-emoticon_angry_outline
+  { ch: '\u{f069b}', name: 'всё' }, // md-emoticon_dead_outline
+  { ch: '\u{f01f4}', name: 'чертёнок' }, // md-emoticon_devil_outline
+  { ch: '\u{f01f7}', name: 'какашка' }, // md-emoticon_poop
+  { ch: '\u{f171a}', name: 'робот' }, // md-robot_happy_outline
+  { ch: '\u{f165d}', name: 'призрак' }, // md-ghost_outline
+  { ch: '\u{f0bc8}', name: 'череп' }, // md-skull_outline
+  { ch: '\u{f10cb}', name: 'пришелец' }, // md-alien_outline
+  { ch: '\u{f011b}', name: 'кот' }, // md-cat
+  { ch: '\u{f0a43}', name: 'пёс' }, // md-dog
+  { ch: '\u{f0ec0}', name: 'пингвин' }, // md-penguin
+  { ch: '\u{f01e5}', name: 'утка' }, // md-duck
+  { ch: '\u{f0907}', name: 'кролик' }, // md-rabbit
+  { ch: '\u{f03d2}', name: 'сова' }, // md-owl
+  { ch: '\u{f0514}', name: 'класс' }, // md-thumb_up_outline
+  { ch: '\u{f0512}', name: 'не нравится' }, // md-thumb_down_outline
+  { ch: '\u{f1822}', name: 'привет' }, // md-hand_wave_outline
+  { ch: '\u{f0579}', name: 'спасибо' }, // md-hands_pray
+  { ch: '\u{f0fd7}', name: 'сила' }, // md-arm_flex
+  { ch: '\u{f02d1}', name: 'сердце' }, // md-heart
+  { ch: '\u{f02d4}', name: 'разбитое сердце' }, // md-heart_broken
+  { ch: '\u{f04ce}', name: 'звезда' }, // md-star
+  { ch: '\u{f0238}', name: 'огонь' }, // md-fire
+  { ch: '\u{f140b}', name: 'молния' }, // md-lightning_bolt
+  { ch: '\u{f14de}', name: 'ракета' }, // md-rocket_launch
+  { ch: '\u{f1056}', name: 'праздник' }, // md-party_popper
+  { ch: '\u{f02a1}', name: 'подарок' }, // md-gift_outline
+  { ch: '\u{f0176}', name: 'кофе' }, // md-coffee
+  { ch: '\u{f0098}', name: 'пиво' }, // md-beer
+  { ch: '\u{f0409}', name: 'пицца' }, // md-pizza
+  { ch: '\u{f00eb}', name: 'торт' }, // md-cake_variant
+  { ch: '\u{f075a}', name: 'музыка' }, // md-music
+  { ch: '\u{f00e4}', name: 'баг' }, // md-bug
+  { ch: '\u{f033e}', name: 'замок' }, // md-lock
+  { ch: '\u{f0306}', name: 'ключ' }, // md-key
+  { ch: '\u{f0565}', name: 'защита' }, // md-shield_check
+  { ch: '\u{f0e1e}', name: 'готово' }, // md-check_bold
+  { ch: '\u{f1398}', name: 'нет' }, // md-close_thick
+  { ch: '\u{f0026}', name: 'внимание' }, // md-alert
+  { ch: '\u{f0625}', name: 'вопрос' }, // md-help_circle_outline
+  { ch: '\u{f06e9}', name: 'идея' }, // md-lightbulb_on_outline
+  { ch: '\u{f0150}', name: 'время' }, // md-clock_outline
+  { ch: '\u{f04b2}', name: 'сплю' }, // md-sleep
+  { ch: '\u{f0599}', name: 'солнце' }, // md-weather_sunny
+  { ch: '\u{f0597}', name: 'дождь' }, // md-weather_rainy
+  { ch: '\u{f0717}', name: 'снег' }, // md-snowflake
+  { ch: '\u{f0208}', name: 'вижу' }, // md-eye
+  { ch: '\u{f0774}', name: 'ниндзя' }, // md-ninja
+  { ch: '\u{f01a5}', name: 'корона' }, // md-crown
+  { ch: '\u{f0538}', name: 'кубок' }, // md-trophy
+  { ch: '\u{f0297}', name: 'игры' }, // md-gamepad_variant
+  { ch: '\u{f0177}', name: 'кофе с собой' }, // md-coffee_to_go
+  { ch: '\u{f025b}', name: 'яблоко' }, // md-food_apple
+  { ch: '\u{f024a}', name: 'цветок' }, // md-flower
+  { ch: '\u{f0cd1}', name: 'листик' }, // md-spa
+  { ch: '\u{f31a}', name: 'Linux' }, // linux-tux
+  { ch: '\u{e70f}', name: 'Windows' }, // dev-windows
+  { ch: '\u{e702}', name: 'git' }, // dev-git
+  { ch: '\u{e709}', name: 'GitHub' }, // dev-github_badge
+  { ch: '\u{e7b0}', name: 'Docker' }, // dev-docker
+  { ch: '\u{e7a8}', name: 'Rust' }, // dev-rust
+  { ch: '\u{e795}', name: 'терминал' }, // dev-terminal
+  { ch: '\u{e62b}', name: 'vim' }, // custom-vim
+  { ch: '\u{f0320}', name: 'Python' }, // md-language_python
+  { ch: '\u{f018d}', name: 'консоль' }, // md-console
+  { ch: '\u{f01bc}', name: 'база' }, // md-database
+  { ch: '\u{f048b}', name: 'сервер' }, // md-server
+  { ch: '\u{f05a9}', name: 'Wi-Fi' }, // md-wifi
+];

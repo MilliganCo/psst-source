@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+*.ico binary
+*.icns binary
+*.vault binary
+*.woff binary
+*.exe binary
+*.sig binary
+*.pub -text

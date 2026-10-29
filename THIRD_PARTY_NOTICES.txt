@@ -1,0 +1,48 @@
+Third-party resources in the Psst source snapshot
+
+1. EFF Large Wordlist
+   Title: EFF's Long Wordlist / EFF Large Wordlist.
+   Author/publisher: Electronic Frontier Foundation.
+   Source: https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
+   Resource page: https://www.eff.org/dice
+   Current permission policy: https://www.eff.org/copyright
+   License used for this publication: Creative Commons Attribution 4.0 International,
+   https://creativecommons.org/licenses/by/4.0/ ; full text in licenses/EFF-CC-BY-4.0.txt.
+   Change: the five-dice numeric codes and separator were removed; all 7,776 word
+   strings and their order match the official text retrieved for this review.
+   The older source README's CC BY 3.0 US label was not reused as a current claim.
+
+2. Nerd Fonts Symbols Only and the chat glyph subset
+   Source font metadata: Symbols Nerd Font Mono 3.5.1, SymbolsNFM.
+   Embedded copyright metadata: Copyright (c) 2016, Ryan McIntyre.
+   Matching-version source license:
+   https://github.com/ryanoasis/nerd-fonts/blob/v3.5.1/patched-fonts/NerdFontsSymbolsOnly/LICENSE
+   License: MIT. Copyright (c) 2014 Ryan L McIntyre.
+   Full text: licenses/NerdFonts-Symbols-MIT.txt.
+   Change: converted/subset to app/src/assets/nf-symbols.woff using the 80 code
+   points listed in app/src/lib/glyphs.ts; no full upstream font repository is bundled.
+   The component sets represented by those code points retain their own notices:
+
+   - Material Design Icons / Pictogrammers: Apache 2.0 for icons and fonts.
+     https://github.com/Templarian/MaterialDesign-Font
+     Original project notice: licenses/Pictogrammers.txt.
+     Full Apache 2.0 terms: licenses/Apache-2.0.txt.
+   - Devicon: MIT, Copyright (c) 2015 konpa.
+     https://github.com/devicons/devicon
+     Full notice: licenses/Devicon-MIT.txt.
+   - Seti UI / original icon family, including custom-vim: MIT.
+     Copyright (c) 2014 Jesse Weed; Nerd Fonts original work retains Ryan's notice above.
+     https://github.com/jesseweed/seti-ui
+     Full notice: licenses/Seti-UI-MIT.txt.
+   - Font Logos: Unlicense / public-domain dedication.
+     https://github.com/lukas-w/font-logos
+     Full notice: licenses/Font-Logos-Unlicense.txt.
+
+The upstream license texts were retrieved as text from the owning repositories
+or canonical SPDX license text, with source URLs and content hashes retained in
+the review receipts. No binary font/installer was downloaded for this review.
+
+Cargo/npm dependencies are referenced by manifests/lockfiles rather than vendored
+here. Building/distributing binaries or third-party dependency payloads requires
+the distributor to preserve their notices as well. No endorsement by these
+resource authors is claimed.

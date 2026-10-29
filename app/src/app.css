@@ -1,0 +1,428 @@
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/700.css';
+
+/* Chat symbols: a subset of Symbols Nerd Font Mono (MIT), only Private Use Area code points. */
+@font-face {
+  font-family: 'NF Symbols';
+  src: url('./assets/nf-symbols.woff') format('woff');
+  unicode-range: U+E000-F8FF, U+F0000-FFFFD;
+  font-display: block;
+}
+
+/* ---------- themes: same tokens everywhere, label slots tuned per theme ---------- */
+:root,
+[data-theme='phosphor'] {
+  --bg: #040a06;
+  --surface: #08130b;
+  --raised: #0d1c11;
+  --line: #1b3a22;
+  --fg: #b9f6c6;
+  --muted: #5e8d68;
+  --accent: #3cff8f;
+  --on-accent: #02160a;
+  --danger: #ff6a5c;
+  --glow: rgba(60, 255, 143, 0.45);
+  --l-red: #ff6a5c;
+  --l-orange: #ff9f45;
+  --l-yellow: #e9e35a;
+  --l-green: #3cff8f;
+  --l-teal: #33e0c6;
+  --l-blue: #5fb4ff;
+  --l-purple: #b993ff;
+  --l-pink: #ff7fbf;
+  --l-gray: #7f9c86;
+  color-scheme: dark;
+}
+[data-theme='amber'] {
+  --bg: #0b0602;
+  --surface: #140b03;
+  --raised: #1d1105;
+  --line: #3d2709;
+  --fg: #ffdba3;
+  --muted: #a27b45;
+  --accent: #ffb000;
+  --on-accent: #1a0e00;
+  --danger: #ff5f45;
+  --glow: rgba(255, 176, 0, 0.45);
+  --l-red: #ff5f45;
+  --l-orange: #ff8c1a;
+  --l-yellow: #ffd23f;
+  --l-green: #b5d65a;
+  --l-teal: #7fd1b9;
+  --l-blue: #8fb8ff;
+  --l-purple: #d0a2ff;
+  --l-pink: #ff8fb8;
+  --l-gray: #a08a6a;
+}
+[data-theme='nord'] {
+  --bg: #2e3440;
+  --surface: #353b49;
+  --raised: #3b4252;
+  --line: #4c566a;
+  --fg: #eceff4;
+  --muted: #a5afc2;
+  --accent: #88c0d0;
+  --on-accent: #232831;
+  --danger: #bf616a;
+  --glow: rgba(136, 192, 208, 0.35);
+  --l-red: #bf616a;
+  --l-orange: #d08770;
+  --l-yellow: #ebcb8b;
+  --l-green: #a3be8c;
+  --l-teal: #8fbcbb;
+  --l-blue: #81a1c1;
+  --l-purple: #b48ead;
+  --l-pink: #d6a0c7;
+  --l-gray: #8a93a6;
+}
+[data-theme='dracula'] {
+  --bg: #282a36;
+  --surface: #2e303e;
+  --raised: #343746;
+  --line: #44475a;
+  --fg: #f8f8f2;
+  --muted: #8f97c4;
+  --accent: #bd93f9;
+  --on-accent: #1e1f29;
+  --danger: #ff5555;
+  --glow: rgba(189, 147, 249, 0.4);
+  --l-red: #ff5555;
+  --l-orange: #ffb86c;
+  --l-yellow: #f1fa8c;
+  --l-green: #50fa7b;
+  --l-teal: #8be9fd;
+  --l-blue: #6c9cff;
+  --l-purple: #bd93f9;
+  --l-pink: #ff79c6;
+  --l-gray: #8f97c4;
+}
+[data-theme='gruvbox'] {
+  --bg: #282828;
+  --surface: #2f2d2c;
+  --raised: #3c3836;
+  --line: #504945;
+  --fg: #ebdbb2;
+  --muted: #a89984;
+  --accent: #fabd2f;
+  --on-accent: #1d2021;
+  --danger: #fb4934;
+  --glow: rgba(250, 189, 47, 0.35);
+  --l-red: #fb4934;
+  --l-orange: #fe8019;
+  --l-yellow: #fabd2f;
+  --l-green: #b8bb26;
+  --l-teal: #8ec07c;
+  --l-blue: #83a598;
+  --l-purple: #d3869b;
+  --l-pink: #e799b0;
+  --l-gray: #928374;
+}
+[data-theme='catppuccin'] {
+  --bg: #1e1e2e;
+  --surface: #232336;
+  --raised: #2a2a3f;
+  --line: #3e3f56;
+  --fg: #cdd6f4;
+  --muted: #9399b2;
+  --accent: #cba6f7;
+  --on-accent: #1e1e2e;
+  --danger: #f38ba8;
+  --glow: rgba(203, 166, 247, 0.35);
+  --l-red: #f38ba8;
+  --l-orange: #fab387;
+  --l-yellow: #f9e2af;
+  --l-green: #a6e3a1;
+  --l-teal: #94e2d5;
+  --l-blue: #89b4fa;
+  --l-purple: #cba6f7;
+  --l-pink: #f5c2e7;
+  --l-gray: #9399b2;
+}
+[data-theme='tokyo'] {
+  --bg: #1a1b26;
+  --surface: #1f2130;
+  --raised: #24283b;
+  --line: #3b4261;
+  --fg: #c0caf5;
+  --muted: #7982ad;
+  --accent: #7aa2f7;
+  --on-accent: #15161e;
+  --danger: #f7768e;
+  --glow: rgba(122, 162, 247, 0.4);
+  --l-red: #f7768e;
+  --l-orange: #ff9e64;
+  --l-yellow: #e0af68;
+  --l-green: #9ece6a;
+  --l-teal: #73daca;
+  --l-blue: #7aa2f7;
+  --l-purple: #bb9af7;
+  --l-pink: #f4a3d4;
+  --l-gray: #737aa2;
+}
+[data-theme='paper'] {
+  --bg: #eef1f4;
+  --surface: #f8fafb;
+  --raised: #ffffff;
+  --line: #cfd6de;
+  --fg: #18202c;
+  --muted: #5d6877;
+  --accent: #1f4fd6;
+  --on-accent: #ffffff;
+  --danger: #c4262e;
+  --glow: rgba(31, 79, 214, 0);
+  --l-red: #c4262e;
+  --l-orange: #c45a10;
+  --l-yellow: #9a7400;
+  --l-green: #23843f;
+  --l-teal: #0f7f7a;
+  --l-blue: #1f4fd6;
+  --l-purple: #7440c9;
+  --l-pink: #b8327a;
+  --l-gray: #6b7280;
+  color-scheme: light;
+}
+
+/* ---------- base ---------- */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.5 'JetBrains Mono', 'NF Symbols', ui-monospace, Consolas, monospace;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 1px;
+}
+a {
+  color: var(--accent);
+}
+
+/* plain bracket buttons: [ сохранить ] */
+.btn {
+  background: none;
+  border: 1px solid var(--line);
+  padding: 3px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.btn.primary:hover {
+  filter: brightness(1.1);
+  color: var(--on-accent);
+}
+.btn.danger:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.icon {
+  background: none;
+  border: 0;
+  padding: 0 4px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.icon:hover {
+  color: var(--accent);
+}
+
+.field {
+  display: grid;
+  gap: 2px;
+}
+.field > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+input[type='text'],
+input[type='password'],
+input[type='number'],
+input:not([type]),
+textarea,
+select {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 5px 8px;
+  width: 100%;
+  border-radius: 0;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+.muted {
+  color: var(--muted);
+}
+.err {
+  color: var(--danger);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 1px 10px;
+  cursor: pointer;
+  color: var(--muted);
+}
+.chip:hover {
+  color: var(--fg);
+}
+.chip.on {
+  border-color: var(--c, var(--accent));
+  color: var(--fg);
+  background: color-mix(in srgb, var(--c, var(--accent)) 16%, transparent);
+}
+.chip.ghost {
+  border-style: dashed;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c, var(--muted));
+  flex: none;
+}
+
+/* ---------- effects: each one on its own switch (html.fx-*) ---------- */
+:root {
+  --row-pad: 4px;
+}
+[data-density='compact'] {
+  --row-pad: 1px;
+}
+[data-density='comfy'] {
+  --row-pad: 8px;
+}
+
+.fx-glow .glow {
+  text-shadow: 0 0 6px var(--glow), 0 0 14px var(--glow);
+}
+
+/* VHS: scanlines, a slow bright band rolling down, a hint of colour fringing. */
+.fx-vhs body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  background:
+    linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.05) 50%, transparent) 0 -30vh / 100% 30vh no-repeat,
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 3px);
+  animation: vhs-roll 9s linear infinite;
+}
+.fx-vhs #app {
+  text-shadow: 0.6px 0 rgba(255, 40, 90, 0.3), -0.6px 0 rgba(40, 170, 255, 0.3);
+}
+@keyframes vhs-roll {
+  to {
+    background-position: 0 130vh, 0 0;
+  }
+}
+[data-theme='paper'].fx-vhs body::after {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.04) 50%, transparent) 0 -30vh / 100% 30vh no-repeat;
+}
+
+/* Pixels: a dot-matrix screen grid and hard edges. */
+.fx-pixels body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background:
+    repeating-linear-gradient(to right, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px);
+}
+[data-theme='paper'].fx-pixels body::before {
+  opacity: 0.35;
+}
+.fx-pixels #app {
+  -webkit-font-smoothing: none;
+}
+.fx-pixels .chip,
+.fx-pixels .tab,
+.fx-pixels .dot {
+  border-radius: 0 !important;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.05em;
+  vertical-align: -0.15em;
+  background: var(--accent);
+}
+.fx-blink .cursor {
+  animation: blink 1.1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fx-blink .cursor,
+  .fx-vhs body::after {
+    animation: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+input[type="checkbox"],
+input[type="range"] {
+  accent-color: var(--accent);
+}
